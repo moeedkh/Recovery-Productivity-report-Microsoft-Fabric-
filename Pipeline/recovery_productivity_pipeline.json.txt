@@ -1,0 +1,94 @@
+{
+    "name": "RO_Productivity_Report",
+    "objectId": "de0930dc-c7a0-4bea-888f-eaf02ae2b2bf",
+    "properties": {
+        "activities": [
+            {
+                "name": "Cash_Processing",
+                "type": "TridentNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "f8b0b14d-4148-4b3b-b19b-c196e39ee5eb",
+                    "workspaceId": "ee4de514-08a0-4ee7-a0b7-ec27e0ba5c04"
+                }
+            },
+            {
+                "name": "Billing_Processing",
+                "type": "TridentNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "Cash_Processing",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "e73b7e86-105d-4079-a35e-821c9ba6e159",
+                    "workspaceId": "ee4de514-08a0-4ee7-a0b7-ec27e0ba5c04"
+                }
+            },
+            {
+                "name": "Final_Report",
+                "type": "TridentNotebook",
+                "dependsOn": [
+                    {
+                        "activity": "Billing_Processing",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    },
+                    {
+                        "activity": "Attempts Verification",
+                        "dependencyConditions": [
+                            "Succeeded"
+                        ]
+                    }
+                ],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "42f2f293-7100-4f61-ae87-2308e73ff63d",
+                    "workspaceId": "ee4de514-08a0-4ee7-a0b7-ec27e0ba5c04"
+                }
+            },
+            {
+                "name": "Attempts Verification",
+                "type": "TridentNotebook",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "typeProperties": {
+                    "notebookId": "2a86fb46-8c23-4456-86fe-1855ee3d8191",
+                    "workspaceId": "ee4de514-08a0-4ee7-a0b7-ec27e0ba5c04"
+                }
+            }
+        ],
+        "lastModifiedByObjectId": "b95491e3-9874-407d-983e-25e9e07a5327",
+        "lastPublishTime": "2026-05-28T07:53:55Z"
+    }
+}
