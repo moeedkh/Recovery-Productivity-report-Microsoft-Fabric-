@@ -56,6 +56,18 @@ The pipeline is designed using a layered Lakehouse architecture:
       ## 🔄 Pipeline Orchestration
 ![Fabric Pipeline Execution Flow](images/Pipeline.png)
 
+      ## 🔄 Lakehouse
+![Fabric Pipeline Execution Flow](images/Staging_Lakehouse.png)
+
+      ## 🔄 Workspace
+![Fabric Pipeline Execution Flow](images/Workspace.png)
+
+      ## 🔄 Output File
+
+![Fabric Pipeline Execution Flow](images/Output_File_p1.png)
+![Fabric Pipeline Execution Flow](images/Output_File_p2.png)
+![Fabric Pipeline Execution Flow](images/Output_File_p3.png)
+      
 
 ## 👤 Author
 **Abdul Moeed Khan**  
