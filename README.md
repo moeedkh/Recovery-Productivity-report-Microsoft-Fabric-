@@ -52,7 +52,11 @@ The pipeline is designed using a layered Lakehouse architecture:
 3. Run them sequentially in pipeline order
 
 ## 📸 Screenshots
-(Screenshots of notebook, data flow, and output can be added here)
+
+      ## 🔄 Pipeline Orchestration
+      
+      ![Fabric Pipeline Execution Flow](images/Pipeline.png)
+
 
 ## 👤 Author
 **Abdul Moeed Khan**  
