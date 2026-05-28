@@ -54,8 +54,7 @@ The pipeline is designed using a layered Lakehouse architecture:
 ## 📸 Screenshots
 
       ## 🔄 Pipeline Orchestration
-      
-      ![Fabric Pipeline Execution Flow](images/Pipeline.png)
+![Fabric Pipeline Execution Flow](images/Pipeline.png)
 
 
 ## 👤 Author
